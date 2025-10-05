@@ -1,60 +1,24 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { Menubar } from 'primeng/menubar';
+import { Menubar, MenubarModule } from 'primeng/menubar';
+import { TabsModule } from 'primeng/tabs';
 
 @Component({
   selector: 'app-top-bar',
   imports: [
-    Menubar
+    TabsModule,
+    RouterLink,
+    MenubarModule
   ],
   templateUrl: './top-bar.html',
   styleUrl: './top-bar.scss'
 })
 export class TopBar {
-  protected items = signal<MenuItem[]>([
-    {
-      label: 'Home',
-      icon: 'pi pi-home'
-    },
-    {
-      label: 'Features',
-      icon: 'pi pi-star'
-    },
-    {
-      label: 'Projects',
-      icon: 'pi pi-search',
-      items: [
-        {
-          label: 'Components',
-          icon: 'pi pi-bolt'
-        },
-        {
-          label: 'Blocks',
-          icon: 'pi pi-server'
-        },
-        {
-          label: 'UI Kit',
-          icon: 'pi pi-pencil'
-        },
-        {
-          label: 'Templates',
-          icon: 'pi pi-palette',
-          items: [
-            {
-              label: 'Apollo',
-              icon: 'pi pi-palette'
-            },
-            {
-              label: 'Ultima',
-              icon: 'pi pi-palette'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      label: 'Contact',
-      icon: 'pi pi-envelope'
-    }
+  protected items = signal([
+    { route: '', label: 'Home', icon: 'pi pi-home' },
+    { route: 'transactions', label: 'Transactions', icon: 'pi pi-chart-line' },
+    { route: 'products', label: 'Products', icon: 'pi pi-list' },
+    { route: 'messages', label: 'Messages', icon: 'pi pi-inbox' }
   ]);
 }
