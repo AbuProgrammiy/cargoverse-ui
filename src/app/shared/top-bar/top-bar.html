@@ -1,10 +1,12 @@
-<p-tabs value="/dashboard">
-  <p-tablist>
-    @for(tab of items(); track tab.route){
-    <p-tab [value]="tab.route" [routerLink]="tab.route" class="flex items-center !gap-2 text-inherit">
-      <i [class]="tab.icon"></i>
-      <span>{{ tab.label }}</span>
-    </p-tab>
-    }
-  </p-tablist>
-</p-tabs>
+<div class="card">
+    <p-menubar [model]="items()" >
+      <ng-template #start>
+        <img
+          src="../../../assets/images/example-logo.png"
+          alt="logocha"
+          width="50px"
+          height="50px"
+        >
+      </ng-template>
+    </p-menubar>
+</div>  

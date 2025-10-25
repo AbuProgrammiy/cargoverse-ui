@@ -9,6 +9,7 @@ import { TabsModule } from 'primeng/tabs';
   imports: [
     TabsModule,
     RouterLink,
+    MenubarModule,
     MenubarModule
   ],
   templateUrl: './top-bar.html',
@@ -16,9 +17,49 @@ import { TabsModule } from 'primeng/tabs';
 })
 export class TopBar {
   protected items = signal([
-    { route: '', label: 'Home', icon: 'pi pi-home' },
-    { route: 'transactions', label: 'Transactions', icon: 'pi pi-chart-line' },
-    { route: 'products', label: 'Products', icon: 'pi pi-list' },
-    { route: 'messages', label: 'Messages', icon: 'pi pi-inbox' }
+    {
+      label: 'Home',
+      icon: 'pi pi-home'
+    },
+    {
+      label: 'Features',
+      icon: 'pi pi-star'
+    },
+    {
+      label: 'Projects',
+      icon: 'pi pi-search',
+      items: [
+        {
+          label: 'Components',
+          icon: 'pi pi-bolt'
+        },
+        {
+          label: 'Blocks',
+          icon: 'pi pi-server'
+        },
+        {
+          label: 'UI Kit',
+          icon: 'pi pi-pencil'
+        },
+        {
+          label: 'Templates',
+          icon: 'pi pi-palette',
+          items: [
+            {
+              label: 'Apollo',
+              icon: 'pi pi-palette'
+            },
+            {
+              label: 'Ultima',
+              icon: 'pi pi-palette'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      label: 'Contact',
+      icon: 'pi pi-envelope'
+    }
   ]);
 }
