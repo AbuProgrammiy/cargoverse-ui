@@ -13,6 +13,12 @@
 
 .question-lable{
   padding: 1.5rem;
-  background-color: var(--green-500);
-  color: white;
+  background-color: var(--p-green-800); 
+  border-radius: 10px;
+  color: var(--p-neutral-50);
 }
+
+.main-header{
+  color: var(--p-neutral-50); 
+}
+
