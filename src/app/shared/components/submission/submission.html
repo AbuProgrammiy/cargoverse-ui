@@ -2,7 +2,7 @@
   header="Request A Quote"
 >
   <form class="w-full grid">
-    <div class="col-6 flex flex-column gap-2 md:p-1 p-2 md:p-1">
+    <div class="col-6 flex flex-column gap-2 p-2 sm:p-1">
       <label>Firstname</label>
       <input
         class="w-full"
@@ -10,7 +10,7 @@
         pInputText 
       />
     </div>
-    <div class="col-6 flex flex-column gap-2 md:p-1 p-2 md:p-1">
+    <div class="col-6 flex flex-column gap-2 p-2 sm:p-1">
       <label>Lastname</label>
       <input
         class="w-full"
@@ -18,7 +18,7 @@
         pInputText 
       />
     </div>
-    <div class="col-6 flex flex-column gap-2 md:p-1 p-2 md:p-1">
+    <div class="col-6 flex flex-column gap-2 p-2 sm:p-1">
       <label>Email</label>
       <input
         class="w-full"
@@ -26,13 +26,20 @@
         pInputText 
       />
     </div>
-    <div class="col-6 flex flex-column gap-2 md:p-1 p-2">
+    <div class="col-6 flex flex-column gap-2 p-2 sm:p-1">
       <label>Phone</label>
       <input
         class="w-full"
         type="text" 
         pInputText 
       />
+    </div>
+    <div class="col-12 flex">
+      <p-button
+        class="w-full"
+        label="Submit"
+        severity="success"
+      ></p-button>
     </div>
   </form>
 </p-card>
