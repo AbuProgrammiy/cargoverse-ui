@@ -1,0 +1,72 @@
+.service-header {
+  font-size: 17.6px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.service-text {
+  font-size: 43px;
+}
+
+.description-1 {
+  font-size: 17.6px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.description-2 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.quote-btn {
+  width: 280px;
+  height: 75px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  background-color: #126a38;
+}
+
+.overlay{
+  width: 300px;
+  height: 300px;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.image{
+  // background-image: url();
+  object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+
+  // large screens
+  .main-container {
+    padding: 0 4rem;
+  }
+
+  .text-group-1 {
+    width: 25%;
+  }
+
+  .text-group-1 {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+
+  // small screens
+  .main-container {
+    padding: 0 1rem;
+  }
+
+  .service-text {
+    font-size: 43px;
+    margin-bottom: 2rem;
+  }
+}

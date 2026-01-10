@@ -1,1 +1,31 @@
-<p>shipping-methods works!</p>
+<div class="w-full flex flex-wrap main-container mt-4">
+  <div class="text-group-1">
+    <p class="service-header">Services</p>
+    <p class="service-text">Our Shipping Methods</p>
+  </div>
+  <div class="text-group-2">
+    <p class="description-1">
+      Our reputation shines with a consistent 5-star, A+ rating. Whether you're relocating within the state or
+      nationwide, Vancouver Transports offers the ideal vehicle shipping service for you.
+    </p>
+    <p class="description-2">
+      With years of experience, our transportation company ensures your car reaches its destination on time and
+      hassle-free. Whether you're buying a new vehicle or moving your current one, our expert transport coordinators
+      will tailor a transport plan to suit your needs.
+    </p>
+  </div>
+</div>
+<div class="w-full flex justify-content-center">
+  <div class="quote-btn mt-3">
+    Get a quote
+  </div>
+</div>
+
+<div class="w-full flex flex-wrap gap-2">
+  @for (item of cardItems; track $index) {
+    <div class="overlay">
+      <img class="w-full h-full image " [src]="item.imageUrl" alt="truck">
+      <p>{{ item.label }}</p>
+    </div>
+  }
+</div>
