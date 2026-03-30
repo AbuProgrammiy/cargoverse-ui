@@ -1,0 +1,18 @@
+<div class="main">
+  <p-button
+    (click)="isDrawerVisisble.set(true)"
+    icon="pi pi-bars"
+    [text]="true"
+  />
+  <img src="../../../../assets/images/logo.jpg" alt="logo">
+  <div></div>
+</div>
+
+<p-drawer [(visible)]="isDrawerVisisble" header="Drawer">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </p>
+</p-drawer>
