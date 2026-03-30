@@ -1,11 +1,14 @@
 <div class="main">
-  <p-button
-    (click)="isDrawerVisisble.set(true)"
-    icon="pi pi-bars"
-    [text]="true"
-  />
-  <img src="../../../../assets/images/logo.jpg" alt="logo">
-  <div></div>
+  <div class="drawer-content">
+    <p-button
+      (click)="isDrawerVisisble.set(true)"
+      icon="pi pi-bars"
+      [text]="true"
+    />
+  </div>
+  <div class="logo-content">
+    <img class="logo" src="../../../../assets/images/logo.jpg" alt="logo" />
+  </div>
 </div>
 
 <p-drawer [(visible)]="isDrawerVisisble" header="Drawer">
