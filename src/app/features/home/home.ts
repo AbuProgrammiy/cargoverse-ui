@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Features } from "./components/features/features";
 import { Overview } from "./components/overview/overview";
 import { Welcome } from './components/welcome/welcome';
 
@@ -6,7 +7,8 @@ import { Welcome } from './components/welcome/welcome';
   selector: 'app-home',
   imports: [
     Welcome,
-    Overview
+    Overview,
+    Features
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss'

@@ -1,4 +1,17 @@
-<div class="main">
-  <app-welcome></app-welcome>
-  <app-overview></app-overview>
+<div>
+  @defer (on viewport) {
+    <app-welcome></app-welcome>
+  } @placeholder {
+    <p>loading</p>
+  }
+  @defer (on viewport) {
+    <app-overview></app-overview>
+  } @placeholder {
+    <p>loading</p>
+  }
+  @defer (on viewport) {
+    <app-features></app-features>
+  } @placeholder {
+    <p>loading</p>
+  }
 </div>
