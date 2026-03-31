@@ -1,14 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { MenuItem } from 'primeng/api';
-import { Menubar, MenubarModule } from 'primeng/menubar';
+import { MenubarModule } from 'primeng/menubar';
 import { TabsModule } from 'primeng/tabs';
 
 @Component({
   selector: 'app-top-bar',
   imports: [
     TabsModule,
-    RouterLink,
     MenubarModule,
     MenubarModule
   ],

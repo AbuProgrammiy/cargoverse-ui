@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { SubmissionV1 } from "./submission-v1/submission-v1";
-import { ShippingMethods } from "./shipping-methods/shipping-methods";
+import { Welcome } from './components/welcome/welcome';
 
 @Component({
   selector: 'app-home',
-  imports: [SubmissionV1, ShippingMethods],
+  imports: [
+    Welcome
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubmissionV1 } from './submission-v1';
+import { Welcome } from './welcome';
 
-describe('SubmissionV1', () => {
-  let component: SubmissionV1;
-  let fixture: ComponentFixture<SubmissionV1>;
+describe('Welcome', () => {
+  let component: Welcome;
+  let fixture: ComponentFixture<Welcome>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubmissionV1]
+      imports: [Welcome]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubmissionV1);
+    fixture = TestBed.createComponent(Welcome);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
