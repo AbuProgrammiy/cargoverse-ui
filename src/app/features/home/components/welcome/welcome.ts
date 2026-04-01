@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.scss'
 })
 export class Welcome {
-
+  public contact = output<void>();
 }

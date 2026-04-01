@@ -18,5 +18,9 @@ import { Welcome } from './components/welcome/welcome';
   styleUrl: './home.scss'
 })
 export class Home {
-
+  protected scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 }
