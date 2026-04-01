@@ -31,6 +31,7 @@
   font-size: 30px;
   text-align: center;
   color: var(--text-color);
+  text-shadow: 0 0 5px black;
 }
 
 .line {
@@ -38,7 +39,6 @@
   height: 10px;
   border-radius: 5px;
   background-color: var(--main-theme);
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 .description {
@@ -47,5 +47,5 @@
   font-size: 15px;
   font-weight: 100;
   line-height: 20px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 5px black;
 }
