@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FeatureDescription } from "./components/feature-description/feature-description";
 import { Features } from "./components/features/features";
 import { Overview } from "./components/overview/overview";
+import { SubmitForm } from "./components/submit-form/submit-form";
 import { Welcome } from './components/welcome/welcome';
 
 @Component({
@@ -10,7 +11,8 @@ import { Welcome } from './components/welcome/welcome';
     Welcome,
     Overview,
     Features,
-    FeatureDescription
+    FeatureDescription,
+    SubmitForm
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss'

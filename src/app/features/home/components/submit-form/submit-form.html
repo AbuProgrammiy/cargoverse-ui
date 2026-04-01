@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="header">
+    <h3 class="header-text">Talk to an Expert</h3>
+    <div class="line"></div>
+    <p class="description">We're ready for your trial shipment now!</p>
+    <form class="form" [formGroup]="form">
+      <div class="control">
+        <label>First name</label>
+        <input type="text" pInputText formControlName="firstName" />
+      </div>
+      <div class="control">
+        <label>Last name</label>
+        <input type="text" pInputText formControlName="lastName" />
+      </div>
+      <div class="control">
+        <label>Phone number</label>
+        <input type="text" pInputText formControlName="phoneNumber" />
+      </div>
+      <div class="control">
+        <label>Shipping from</label>
+        <p-select
+          [options]="shippingOptions"
+          formControlName="shippingFrom"
+          placeholder="Select"
+          class="w-full md:w-56"
+        />
+      </div>
+      <div class="control">
+        <label>Shipping from</label>
+        <p-select
+          [options]="shippingOptions"
+          formControlName="shippingTo"
+          placeholder="Select"
+          class="w-full md:w-56"
+        />
+      </div>
+    </form>
+  </div>
+</div>
