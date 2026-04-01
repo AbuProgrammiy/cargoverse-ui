@@ -1,1 +1,13 @@
-<p>feature-description works!</p>
+<div class="main">
+  @for (item of items; track $index) {
+    <div class="card" [style.background-image]="'url(' + item.imgSrc + ')'">
+      <div class="content">
+        <div class="text-content">
+          <h2 class="title">{{ item?.title }}</h2>
+          <div class="line"></div>
+          <p class="description">{{ item?.description }}</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>
