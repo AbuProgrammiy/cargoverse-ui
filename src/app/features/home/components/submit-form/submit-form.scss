@@ -1,7 +1,6 @@
 .main {
   width: 100%;
   padding: 60px 0;
-
 }
 
 .header {
@@ -64,8 +63,12 @@
   }
 }
 
-.footer{
+.footer {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.error {
+  color: red;
+  font-size: 12px;
 }

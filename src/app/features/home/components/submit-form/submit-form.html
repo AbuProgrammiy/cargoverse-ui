@@ -7,14 +7,29 @@
       <div class="control">
         <label>First name</label>
         <input type="text" pInputText formControlName="firstName" />
+        @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
+          <div class="error">
+            First name is required.
+          </div>
+        }
       </div>
       <div class="control">
         <label>Last name</label>
         <input type="text" pInputText formControlName="lastName" />
+        @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
+          <div class="error">
+            Last name is required.
+          </div>
+        }
       </div>
       <div class="control">
         <label>Phone number</label>
         <input type="text" pInputText formControlName="phoneNumber" />
+        @if (form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched) {
+          <div class="error">
+            Phone number is required.
+          </div>
+        }
       </div>
       <div class="control">
         <label>Shipping from</label>
@@ -24,6 +39,11 @@
           placeholder="Select"
           class="w-full md:w-56"
         />
+        @if (form.get('shippingFrom')?.invalid && form.get('shippingFrom')?.touched) {
+          <div class="error">
+            Shipping from is required.
+          </div>
+        }
       </div>
       <div class="control">
         <label>Shipping to</label>
@@ -33,6 +53,11 @@
           placeholder="Select"
           class="w-full md:w-56"
         />
+        @if (form.get('shippingTo')?.invalid && form.get('shippingTo')?.touched) {
+          <div class="error">
+            Shipping to is required.
+          </div>
+        }
       </div>
       <div class="control">
         <label>Comment</label>
