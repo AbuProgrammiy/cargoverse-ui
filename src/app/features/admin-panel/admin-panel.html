@@ -9,6 +9,8 @@
     [rowsPerPageOptions]="[10, 20, 50]"
     [loading]="loading()"
     responsiveLayout="scroll"
+    [scrollable]="true"
+    scrollHeight="90vh"
     showGridlines
     [tableStyle]="{ 'min-width': '60rem' }"
   >
@@ -17,17 +19,17 @@
       <tr>
         <th>
           First Name
-          <input pInputText type="text" formControlName="firstName" />
+          <input pInputText type="text" formControlName="firstName" class="w-full" />
         </th>
 
         <th>
           Last Name
-          <input pInputText type="text" formControlName="lastName" />
+          <input pInputText type="text" formControlName="lastName" class="w-full" />
         </th>
 
         <th>
           Phone
-          <input pInputText type="text" formControlName="phoneNumber" />
+          <input pInputText type="text" formControlName="phoneNumber" class="w-full" />
         </th>
 
         <th>
@@ -38,6 +40,7 @@
             [editable]="true"
             [showClear]="true"
             placeholder="Select or type"
+            class="w-full"
           ></p-select>
         </th>
 
@@ -49,12 +52,13 @@
             [editable]="true"
             [showClear]="true"
             placeholder="Select or type"
+            class="w-full"
           ></p-select>
         </th>
 
         <th>
           Comment
-          <input pInputText type="text" formControlName="comment" />
+          <input pInputText type="text" formControlName="comment" class="w-full" />
         </th>
       </tr>
     </ng-template>

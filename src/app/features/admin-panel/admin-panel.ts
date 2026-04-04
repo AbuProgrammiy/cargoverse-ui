@@ -28,24 +28,66 @@ export class AdminPanel implements OnInit {
 
   // ✅ your dropdown options
   protected readonly shippingOptions = [
-    'Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
-    'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa',
-    'Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan',
-    'Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire',
-    'New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio',
-    'Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota',
-    'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia',
-    'Wisconsin','Wyoming',
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New Hampshire',
+    'New Jersey',
+    'New Mexico',
+    'New York',
+    'North Carolina',
+    'North Dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode Island',
+    'South Carolina',
+    'South Dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West Virginia',
+    'Wisconsin',
+    'Wyoming',
   ];
 
   // ✅ reactive form
-  protected filterForm = this.fb.group({,
-    firstName: [''],
-    lastName: [''],
-    phoneNumber: [''],
-    shippingFrom: [''],
-    shippingTo: [''],
-    comment: [''],
+  protected filterForm = this.fb.group({
+    firstName: this.fb.control<string | null>(null),
+    lastName: this.fb.control<string | null>(null),
+    phoneNumber: this.fb.control<string | null>(null),
+    shippingFrom: this.fb.control<string | null>(null),
+    shippingTo: this.fb.control<string | null>(null),
+    comment: this.fb.control<string | null>(null),
   });
 
   private lastLazyEvent: TableLazyLoadEvent = {
@@ -58,10 +100,7 @@ export class AdminPanel implements OnInit {
 
     // ✅ react to ALL filter changes with debounce
     this.filterForm.valueChanges
-      .pipe(
-        debounceTime(400),
-        takeUntilDestroyed(this.destroyRef)
-      )
+      .pipe(debounceTime(400), takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.loadDataLazy({
           ...this.lastLazyEvent,
@@ -84,8 +123,9 @@ export class AdminPanel implements OnInit {
 
   // 🚀 Lazy loading
   protected loadDataLazy(event: TableLazyLoadEvent) {
-    this.loading.set(true);
+    if (!event) return;
 
+    this.loading.set(true);
     this.lastLazyEvent = event;
 
     const formValues = this.filterForm.value;
