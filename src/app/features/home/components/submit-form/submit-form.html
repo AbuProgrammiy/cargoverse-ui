@@ -43,7 +43,14 @@
           formControlName="comment"
         ></textarea>
       </div>
-      <button class="submit-btn">Submit</button>
+      <button class="submit-btn" [disabled]="isLoading()" (click)="submit()">
+        @if (isLoading()) {
+          <i class="pi pi-spin pi-spinner"></i>
+        }
+        @else{
+          Submit
+        }
+      </button>
     </form>
   </div>
 </div>
