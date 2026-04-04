@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="contnet">
+    <h3 class="header">
+      Enter <strong>password</strong> to access admin panel!
+    </h3>
+    <input
+      #passwordModel="ngModel"
+      required
+      type="text"
+      pInputText
+      [(ngModel)]="password"
+    />
+    <div class="submit">
+      <p-button
+        [disabled]="passwordModel.invalid"
+        [style]="{ width: '15rem' }"
+        label="Log in"
+        severity="success"
+        (onClick)="submit()"
+      />
+    </div>
+  </div>
+</div>
