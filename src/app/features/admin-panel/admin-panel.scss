@@ -1,7 +1,11 @@
 .main {
   width: 100%;
-  padding: 40px 16px;
+  padding: 60px 16px;
   min-height: 100vh;
+}
+
+.header{
+  text-align: center;
 }
 
 :host ::ng-deep .p-table {
