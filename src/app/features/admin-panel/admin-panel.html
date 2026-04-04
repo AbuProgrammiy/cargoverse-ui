@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" [formGroup]="filterForm">
   <p-table
     [value]="clients()"
     [lazy]="true"
@@ -17,27 +17,44 @@
       <tr>
         <th>
           First Name
-          <input pInputText type="text" (input)="onFilter($event, 'firstName')" />
+          <input pInputText type="text" formControlName="firstName" />
         </th>
+
         <th>
           Last Name
-          <input pInputText type="text" (input)="onFilter($event, 'lastName')" />
+          <input pInputText type="text" formControlName="lastName" />
         </th>
+
         <th>
           Phone
-          <input pInputText type="text" (input)="onFilter($event, 'phoneNumber')" />
+          <input pInputText type="text" formControlName="phoneNumber" />
         </th>
+
         <th>
           Shipping From
-          <input pInputText type="text" (input)="onFilter($event, 'shippingFrom')" />
+          <p-select
+            formControlName="shippingFrom"
+            [options]="shippingOptions"
+            [editable]="true"
+            [showClear]="true"
+            placeholder="Select or type"
+          ></p-select>
         </th>
+
         <th>
           Shipping To
-          <input pInputText type="text" (input)="onFilter($event, 'shippingTo')" />
+          <p-select
+            formControlName="shippingTo"
+            [options]="shippingOptions"
+            [editable]="true"
+            [showClear]="true"
+            placeholder="Select or type"
+          ></p-select>
         </th>
+
         <th>
           Comment
-          <input pInputText type="text" (input)="onFilter($event, 'comment')" />
+          <input pInputText type="text" formControlName="comment" />
         </th>
       </tr>
     </ng-template>
