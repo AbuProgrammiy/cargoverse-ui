@@ -1,0 +1,17 @@
+.main {
+  width: 100%;
+  padding: 40px 16px;
+  min-height: 100vh;
+}
+
+:host ::ng-deep .p-table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+:host ::ng-deep th input {
+  width: 100%;
+  margin-top: 4px;
+  padding: 4px;
+  border-radius: 6px;
+}

@@ -1,0 +1,57 @@
+<div class="main">
+  <p-table
+    [value]="clients()"
+    [lazy]="true"
+    (onLazyLoad)="loadDataLazy($event)"
+    [paginator]="true"
+    [rows]="10"
+    [totalRecords]="totalRecords()"
+    [rowsPerPageOptions]="[10, 20, 50]"
+    [loading]="loading()"
+    responsiveLayout="scroll"
+    showGridlines
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <!-- 🔍 FILTER HEADER -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th>
+          First Name
+          <input pInputText type="text" (input)="onFilter($event, 'firstName')" />
+        </th>
+        <th>
+          Last Name
+          <input pInputText type="text" (input)="onFilter($event, 'lastName')" />
+        </th>
+        <th>
+          Phone
+          <input pInputText type="text" (input)="onFilter($event, 'phoneNumber')" />
+        </th>
+        <th>
+          Shipping From
+          <input pInputText type="text" (input)="onFilter($event, 'shippingFrom')" />
+        </th>
+        <th>
+          Shipping To
+          <input pInputText type="text" (input)="onFilter($event, 'shippingTo')" />
+        </th>
+        <th>
+          Comment
+          <input pInputText type="text" (input)="onFilter($event, 'comment')" />
+        </th>
+      </tr>
+    </ng-template>
+
+    <!-- 📊 BODY -->
+    <ng-template pTemplate="body" let-client>
+      <tr>
+        <td>{{ client.firstName }}</td>
+        <td>{{ client.lastName }}</td>
+        <td>{{ client.phonenumber }}</td>
+        <td>{{ client.shippingFrom }}</td>
+        <td>{{ client.shippingTo }}</td>
+        <td>{{ client.comment }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

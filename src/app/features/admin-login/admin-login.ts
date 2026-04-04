@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InputText } from 'primeng/inputtext';
-import { Button } from 'primeng/button';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { Button } from 'primeng/button';
+import { InputText } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-admin-login',
@@ -26,7 +26,7 @@ export class AdminLogin {
       });
 
       localStorage.setItem('hasAccess', 'true');
-      this.router.navigate(['admin']);
+      this.router.navigate(['admin-panel']);
     } else {
       this.messageService.add({
         summary: 'Error',
