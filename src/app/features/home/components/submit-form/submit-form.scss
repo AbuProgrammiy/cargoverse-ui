@@ -56,5 +56,16 @@
     color: var(--text-color-dark);
     background-color: var(--main-theme);
     cursor: pointer;
+
+    &:disabled {
+      background-color: rgba($color: gray, $alpha: 0.3);
+      cursor: not-allowed;
+    }
   }
+}
+
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

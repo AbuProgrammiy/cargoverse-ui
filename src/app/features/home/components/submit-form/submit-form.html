@@ -43,14 +43,39 @@
           formControlName="comment"
         ></textarea>
       </div>
-      <button class="submit-btn" [disabled]="isLoading()" (click)="submit()">
+      <button
+        class="submit-btn"
+        [disabled]="isLoading() || form.invalid"
+        (click)="submit()"
+      >
         @if (isLoading()) {
           <i class="pi pi-spin pi-spinner"></i>
-        }
-        @else{
+        } @else {
           Submit
         }
       </button>
     </form>
   </div>
 </div>
+
+<p-dialog
+  [(visible)]="isDIalogVisible"
+  [modal]="true"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+  <ng-template #header> <h4>Successfully submitted!</h4> </ng-template>
+  <p>
+    Your request has been successfully <strong>submitted</strong>. We will
+    <strong>contact</strong> you shortly.
+  </p>
+  <ng-template #footer>
+    <div class="footer">
+      <p-button
+        label="Close"
+        [outlined]="true"
+        severity="secondary"
+        (onClick)="isDIalogVisible.set(false); form.reset()"
+      />
+    </div>
+  </ng-template>
+</p-dialog>

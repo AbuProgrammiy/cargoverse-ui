@@ -7,10 +7,12 @@ import { ClientService } from '../../../../shared/services/client-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { finalize } from 'rxjs';
 import { CreateClientRequest } from '../../../../shared/requests/create-client.request';
+import { Dialog } from 'primeng/dialog';
+import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-submit-form',
-  imports: [ReactiveFormsModule, InputText, Select, Textarea],
+  imports: [ReactiveFormsModule, InputText, Select, Textarea, Dialog,Button],
   templateUrl: './submit-form.html',
   styleUrl: './submit-form.scss',
 })
@@ -83,10 +85,12 @@ export class SubmitForm {
     'Wyoming',
   ];
 
+  protected isDIalogVisible = signal(false);
+
   protected submit() {
     this.isLoading.set(true);
     const request = this.buildRequest();
-    
+
     this.clientService
       .createClient(request)
       .pipe(
@@ -96,7 +100,9 @@ export class SubmitForm {
         }),
       )
       .subscribe({
-        next: (data) => {},
+        next: (data) => {
+          this.isDIalogVisible.set(true);
+        },
         error: (err) => {
           this.clientService.showError();
         },

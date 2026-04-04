@@ -1,27 +1,7 @@
 <div>
-  @defer (on viewport) {
-    <app-welcome (contact)="scrollTo('submit-form')"></app-welcome>
-  } @placeholder {
-    <p>loading</p>
-  }
-  @defer (on viewport) {
+  <app-welcome (contact)="scrollTo('submit-form')"></app-welcome>
     <app-overview></app-overview>
-  } @placeholder {
-    <p>loading</p>
-  }
-  @defer (on viewport) {
     <app-features></app-features>
-  } @placeholder {
-    <p>loading</p>
-  }
-  @defer (on viewport) {
     <app-feature-description></app-feature-description>
-  } @placeholder {
-    <p>loading</p>
-  }
-  @defer (on viewport) {
     <app-submit-form id="submit-form"></app-submit-form>
-  } @placeholder {
-    <p>loading</p>
-  }
 </div>
